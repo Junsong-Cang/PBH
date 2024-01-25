@@ -1,0 +1,87 @@
+----DM_Parameters----
+DM_Channel
+1
+Mdm
+0.1
+Pann
+0
+Gamma
+0
+----PBH_Parameters----
+PBH_Model
+1
+PBH_Distribution
+1
+Mbh
+1E3
+fbh
+0
+PBH_Lognormal_Sigma
+1
+PBH_PWL_Mmax
+1.0E16
+PBH_PWL_Gamma
+0.5
+PBH_Spin
+0
+----Cosmological_Parameters----
+Tcmb
+2.728
+obh2
+.02242
+omh2
+.1424
+okh2
+0
+odeh2
+0.31538756
+w0,wa
+-1 0
+YHe
+.245
+Neff
+3.046
+
+----------------------------------------------------------------------------------------
+Input parameters for HyRec, do NOT change any of above lines that begin or end with ----
+The strings above each number describe the parameter in the following line and are documented below
+Full documentation can be found in history.h
+----------------------------------------------------------------------------------------
+DM_Channel : DM decay/annihilation channel
+    1 - Photon
+    2 - Electron
+    3 - Higgs
+    4 - Muon
+    5 - Tau
+    6 - Q
+    7 - Charm
+    8 - Bottom
+    9 - Top
+    10 - W
+    11 - Z
+    12 - Gluon
+Mdm : DM mass in GeV
+Pann : <sigma v>/Mdm for annihilating DM, in cm^3/s/GeV unit
+Gamma : DM decay width in s^-1
+PBH_Model : PBH energy injection model
+    1 - Accretion
+    2 - Hawking Radiation, with hadronisation emissions, detailed in arxiv 2108.13256
+    3 - Hawking Radiation, with NO hadronisation emissions, detailed in arxiv 2108.13256
+    4 - Hawking Radiation accounting only for electron+positron+gamma emissions, applicapable for Mbh = [10^15, 10^17] g
+PBH_Distribution : PBH distribution model, see 2108.13256
+    1 - Monochromatic
+    2 - Log-normal
+    3 - Power-law
+    4 - Critical collapse
+Mbh : PBH mass, unit is msun if PBH_Model==1, otherwise grams. exact definition of Mbh varies according to the choice of PBH_Distribution
+    PBH_Distribution == 1: Mbh
+    PBH_Distribution == 2: Mc
+    PBH_Distribution == 3: Mmin
+    PBH_Distribution == 4: Mc
+fbh : Omega_bh / Omega_dm
+PBH_Lognormal_Sigma : Log-normal distribution width
+PBH_PWL_Mmax : Mmax for power-law distribution, unit is msun if PBH_Model==1, otherwise gram
+PBH_PWL_Gamma : Power-law index for power-law distribution
+PBH_Spin : Reduced Kerr spin of PBH, see arxiv 2108.13256 for definition
+           Currently only applicable to Hawking radiation for following values: [0 0.25 0.5 0.75 0.999 0.9999]
+           will automatically find closest matching spin if entered value is not among above list
